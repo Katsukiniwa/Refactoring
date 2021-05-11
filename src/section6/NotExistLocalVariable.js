@@ -8,10 +8,7 @@ function printOwing(invoice) {
     outstanding += o.amount;
   }
 
-  // 締め日の記録(record due date)
-  const today = Clock.today;
-  invoice.dueDate = new Date(today.getFullYear(), today.getMonth(), today.getDate() + 30);
-
+  recordDueDate(invoice);
   printDetail(invoice, outstanding);
 }
 
@@ -27,3 +24,7 @@ function printDetail(invoice, outstanding) {
   console.log(`due: ${invoice.dueDate.toLocalDateString()}`);
 }
 
+function recordDueDate(invioce) {
+  const today = Clock.today;
+  invoice.dueDate = new Date(today.getFullYear(), today.getMonth(), today.getDate() + 30);
+}
