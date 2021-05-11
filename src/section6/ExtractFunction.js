@@ -1,8 +1,10 @@
 function printOwing(invoice) {
   printBanner();
   let outstanding = calculateOutstanding();
+  printDetail(outstanding);
 
-  // 明細の印字(print detail)
-  console.log(`name: ${invoice.customer}`);
-  console.log(`amount: ${outstanding}`);
+  function printDetail(outstanding) {
+    console.log(`name: ${invoice.customer}`);
+    console.log(`amount: ${outstanding}`);
+  }
 }
