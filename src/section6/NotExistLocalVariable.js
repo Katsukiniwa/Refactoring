@@ -12,14 +12,7 @@ function printOwing(invoice) {
   const today = Clock.today;
   invoice.dueDate = new Date(today.getFullYear(), today.getMonth(), today.getDate() + 30);
 
-  printDetail();
-
-  function printDetail() {
-    // 明細の印字(print degail)
-    console.log(`name: ${invoice.customer}`);
-    console.log(`amount: ${outstanding}`);
-    console.log(`due: ${invoice.dueDate.toLocalDateString()}`);
-  }
+  printDetail(invoice, outstanding);
 }
 
 function printBanner() {
@@ -27,3 +20,10 @@ function printBanner() {
   console.log("==== Customer Owes ====");
   console.log("=======================");
 }
+
+function printDetail(invoice, outstanding) {
+  console.log(`name: ${invoice.customer}`);
+  console.log(`amount: ${outstanding}`);
+  console.log(`due: ${invoice.dueDate.toLocalDateString()}`);
+}
+
