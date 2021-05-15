@@ -1,6 +1,9 @@
 class Book {
- addReservation() {
-  // 優先度付き行列をサポートしなければならなくなった
+ addReservation(customer) {
+  this._reservations.push(customer);
+ }
+
+ zz_addReservation(customer) {
   this._reservations.push(customer);
  }
 }
