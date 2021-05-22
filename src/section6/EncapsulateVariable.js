@@ -1,25 +1,25 @@
 /**
  * ある有用なデータがグローバル変数に格納されているとする
  */
-let defaultOwner = { firstName: 'Sample', lastName: 'Test' };
+let defaultOwnerData = { firstName: 'Sample', lastName: 'Test' };
 
 /**
  * 値を参照するとき
  */
-spaceship.owner = defaultOwner;
+spaceship.owner = getDefaultOwner();
 
 /*
  * 更新するとき
  */
-defaultOwner = { firstName: 'NewSample', lastName: 'NewTest' };
+setDefaultOwner({ firstName: 'NewSample', lastName: 'NewTest' })
 
 /*
  * データを読み書きする関数を定義することで変数をカプセル化する
  */
-function getDefaultOwner() {
+export function defaultOwner() {
   return defaultOwner;
 }
 
-function setDefaultOwner(arg) {
+export function setDefaultOwner(arg) {
   defaultOwner = arg;
 }
